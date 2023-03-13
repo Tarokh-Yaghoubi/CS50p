@@ -1,19 +1,25 @@
-# Ask user for their name 
-name = input("What is your name : ").strip().title()
+
+def main():
+
+    name = input("What is your name : ").strip().title()
+
+# Ask user for their name
 
 # Strip() : remove white spaces from string
 
 # split users name into first name and last name 
 
-first, last = name.split(" ")
+    first, last = name.split(" ")
+
+    print("Hello", name, sep="???")
+
+    hello(name)
+
+    print(f"Hello {first}")
 
 
-print("Hello", name, sep="???")
-
-print(f"Hello {name}")
-
-print('Hello "friend" ')
-
-print(f"Hello {first}")
-
-print("the dude writing these programs is called \"tarokh\" ")
+def hello(to="Someone"):
+    print(f"Hello {to}")
+    
+    
+main()
