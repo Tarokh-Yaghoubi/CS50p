@@ -6,7 +6,7 @@ def main():
     check(message)
     
 def check(reply):
-    if reply == "hello":
+    if "hello" in reply:
         print("$0")
     elif reply[0] == "h" and reply != "hello":
         print("$20")
