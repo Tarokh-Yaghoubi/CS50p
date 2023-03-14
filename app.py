@@ -1,29 +1,14 @@
+# A program to check if the user has entered the Great Question of Life , Correctly
+
 def main():
-    print("WELCOME TO THE GRADES !!!")
-    score = int(input("Enter the score : "))
-    grade(score)
-        
-
-def is_even(n):
-    
-    return n % 2 == 0
+    x = input("What is the Answer to the Great Question of Life, the Universe, and Everything?")
+    x = x.lower().strip()
+    if check(x): print("Yes")
+    else : print("No")
 
 
-def grade(score):
-    
-    if is_even(score):
-        print("Even")
-    else : print("ODD")
-    
-    if 90 <= score <= 100:
-        print("Grade : A")
-    elif 80 <= score < 90:
-        print("Grade : B")
-    elif 70 <= score < 80:
-        print("Grade : C")
-    elif 60 <= score < 70:
-        print("Grade : D")
-    else:
-        print("Failed !")
-        
+def check(answer):
+    return answer == "42" or answer == "forty-two" or answer == "forty two"
+
+
 main()
