@@ -9,4 +9,3 @@ students = {
 
 for i in students:
     print(i, students[i], sep=" ->  ")
-    
