@@ -8,4 +8,4 @@ students = {
 # we could use _ , but we dont because our code will be to cryptic 
 
 for i in students:
-    print(i, students[i], sep=" ->  ")
+    print(i, students[i], sep=" ->  ")  
