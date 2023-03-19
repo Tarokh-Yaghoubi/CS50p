@@ -6,26 +6,27 @@ def main():
         print("Invalid")
 
 
-def is_valid(s):
-    
-    puncs = ['.' , ' ' , ',' , '-']
-    ans = False
-    
-    if len(s) > 6 or len(s) < 2:
-        ans = False
-    
-    if len(s) >= 2 and len(s) <= 6:
-        for letter in s:
-            if letter in puncs:
-                ans = False
-            else : ans = True
 
-        if s[0:2].isalpha() and s[2:].isalnum():
-            ans = True
-        else : ans = False                
-        
-        if '0' in s[0:2] or '0' in s[2] or s[-1].isalpha():
-            ans = False
-    return ans
+def is_valid(s):
+    if 2 <= len(s) <= 6 and s.isalnum():
+        # Return true if characters are all letters
+        if s.isalpha():
+            return True
+        else:
+            # Check for number in the middle
+            # (only if the first two characters are letters and the last character is number)
+            if s[:2].isalpha() and s[-2:].isdigit():
+                for i in range(len(s)):
+                    if s[i].isdigit():
+                        # Return false if number starts with 0 or the following character is letter
+                        if s[i].startswith("0") or s[i:].isalpha():
+                            return False
+                        else:
+                            return True
+            else:
+                return False
+    else:
+        return False
+
 
 main()
