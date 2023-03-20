@@ -20,7 +20,7 @@ while True:
         for x in menu:
             if order == x:
                 totalPrice += menu[x]
-                print("Total: $" + str(totalPrice) + "0")
+                print(f"Total: ${totalPrice:.2f}")
             else:
                 continue
 
