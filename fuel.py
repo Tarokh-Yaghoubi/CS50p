@@ -6,14 +6,14 @@ while True:
         if ans > 100.0:
             pass
         
-        elif ans == 100.0:
+        elif ans == 100.0 or ans == 99.0:
             print("F")
             break
-        elif ans == 0.0:
+        elif ans == 0.0 or ans == 1.0:
             print("E")
             break
         else:
-            print(f"{int(ans)}%")
+            print(f"{int(round((ans)))}%")
             break
         
     except (ValueError, ZeroDivisionError):
