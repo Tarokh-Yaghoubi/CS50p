@@ -19,7 +19,10 @@ def main():
 
 
 def hello(to="Someone"):
-    print(f"Hello {to}")
     
+    return f"Hello {to}"
     
-main()
+
+if __name__ == "__main__":
+    
+    main()
