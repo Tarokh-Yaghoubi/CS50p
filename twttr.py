@@ -1,25 +1,18 @@
-
 def main():
-    
-    vowels = ['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u']
-    final = []
-
-    name = input("Input: ")
-
-    name = list(name)
-
-    check(name, vowels, final)
-
-    print("Output: ", end="")
-    for i in final:
-        print(i, end="")
+    text = input("Input: ")
+    output = shorten(text)
+    print(f"Output: {output}")
 
 
-def check(name, vowels, final):
-    for i in name:
-        if i not in vowels:
-            final.append(i)
-            
-    return final
+def shorten(word):
+    vowels = ["a", "e", "i", "o", "u"]
+    shortened = []
+    for c in word:
+        if c.casefold() not in vowels:
+            shortened.append(c)
+    output = str("".join(shortened))
+    return output
 
-main()
+
+if __name__ == "__main__":
+    main()
