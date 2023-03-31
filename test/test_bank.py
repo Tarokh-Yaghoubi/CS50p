@@ -1,7 +1,10 @@
-from bank import check
+from bank import value
 
-def test_options():
-    assert check("hello Tarokh") == "$0"
-    assert check("hey Tarokh") == "$20"
-    assert check("Jesus Tarokh") == "$100"
-    assert check("Hello Tarokh") == "$0"
+
+def test_greeting():
+    assert value("hello world") == 0
+    assert value("HELLO WORLD") == 0
+    assert value("hi world") == 20
+    assert value("HI WORLD") == 20
+    assert value("wassup world") == 100
+    assert value("WASSUP WORLD") == 100
