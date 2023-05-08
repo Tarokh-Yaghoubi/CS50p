@@ -1,44 +1,45 @@
-# EXPLANATION OF OOP - OBJECT ORIENTED PROGRAMMING
+# An explanation on object-oriented programming 
+
 
 class Student:
     
-    def __init__(self, first, last, house, middle=None):
-        if not first:
-            raise ValueError("Missing First Name")
-
-        if house not in ["London", "Tehran", "Berlin", "Ravenclaw"]:
-            raise ValueError("Wrong House")
+    def __init__(self, first, last, country, city=None):
         
-        self.first = first
-        self.middle = middle
-        self.last = last
-        self.house = house
+        ''' This syntax is Pythonic '''
+        
+        if not first:
+            raise ValueError("You did'nt enter a name ... ")
 
+        if city not in ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"]:
+            raise ValueError("Wrong City ... ")
+                
+        self.first = first
+        self.last = last
+        self.country = country
+        self.city = city
+        
+     #   print(f"{self.name} lives in {self.city}")
+        ''' this is also a comment '''
+    
     def __str__(self):
-        return f"{self.name} from {self.house}"
+        return f"{self.first} from {self.country}"
 
 def main():
-    student = get_house()
-        
-   # print(f"{student.name} from {student.city}")
+#    users = ["tarokh", "harry", "karim", "jacob", "jorge"]
+    
+    student = get_person()
+#    if student.name not in users:
+#        student.city = "Ravenclaw"
+
     print(student)
-
-# def get_name():
-#    return input("Type in your name: ")
     
-
-# def get_house():
-#    return input("Type in your city: ")
-
-
-def get_house():
+def get_person():
     
-    first = input("First Name : ")
-    middle = input("Middle Name : ")
-    last = input("Last Name : ")
-    house = input("House : ")
-    return Student(first, last, house, middle) 
-
+    first = input("Type in your name ... ")
+    last = input("Type in your last name ... ")
+    country = input("Type in your country ... ")
+    city = input("Which city do you live in ... ")
+    return Student(first, last, country, city) 
 
 if __name__ == "__main__":
     main()
