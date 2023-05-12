@@ -1,0 +1,8 @@
+print(type(50))
+print(type("Hello World"))
+print(type(50.3))
+print(type(True))
+print(type(False))
+print(type(list()))
+print(type({}))
+print(type(()))
