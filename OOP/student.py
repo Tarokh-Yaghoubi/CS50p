@@ -1,45 +1,62 @@
-# An explanation on object-oriented programming 
+# an Explanation on Object Oriented Programming in Python . 
+
+def main():
+    
+    student = Student.get()
+    print(student)
+    
+
 
 
 class Student:
     
-    def __init__(self, first, last, country, city=None):
+    def __init__(self, name, city):
         
-        ''' This syntax is Pythonic '''
-        
-        if not first:
-            raise ValueError("You did'nt enter a name ... ")
-
-        if city not in ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"]:
-            raise ValueError("Wrong City ... ")
-                
-        self.first = first
-        self.last = last
-        self.country = country
+        self.name = name.title()
         self.city = city
+
+    
+    def __str__(self) -> str:
         
-     #   print(f"{self.name} lives in {self.city}")
-        ''' this is also a comment '''
+        return f"{self.name} lives in {self.city}"
     
-    def __str__(self):
-        return f"{self.first} from {self.country}"
+    @classmethod
+    def get(cls):
+        name = input("Type in your name : ")
+        city = input("Type in where you live : ")
+        return cls(name, city)
+    
+    # Properties
+    
+    
+    @property
+    def name(self):
+        return self._name 
+    
+    
+    @name.setter
+    def name(self, name):
+        if not name:
+            raise ValueError("Missing Name")
 
-def main():
-#    users = ["tarokh", "harry", "karim", "jacob", "jorge"]
+        self._name = name     
     
-    student = get_person()
-#    if student.name not in users:
-#        student.city = "Ravenclaw"
+    
 
-    print(student)
+    @property    
+    def city(self):
+        return self._city
     
-def get_person():
     
-    first = input("Type in your name ... ")
-    last = input("Type in your last name ... ")
-    country = input("Type in your country ... ")
-    city = input("Which city do you live in ... ")
-    return Student(first, last, country, city) 
+    @city.setter
+    def city(self, city):
+        
+        if city not in ["Ravenclaw", "Gryffindor", "Hufflepuff", "Slytherin"]:
+            raise ValueError("Invalid City")
+        
+        self._city = city
+        
 
 if __name__ == "__main__":
     main()
+    
